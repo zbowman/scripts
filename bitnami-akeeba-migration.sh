@@ -9,7 +9,7 @@ cp /opt/bitnami/apps/joomla/conf/htaccess.conf /home/bitnami/backup/htaccess_bac
 wget -O /home/bitnami/kickstart.zip https://www.akeebabackup.com/download/akeeba-kickstart/5-4-2/kickstart-core-5-4-2-zip.zip
 cp /opt/bitnami/apps/joomla/htdocs/configuration.php /home/bitnami/backup
 sudo rm -rf /opt/bitnami/apps/joomla/htdocs
-mysql_pass=$(</home/bitnami/bitnami_application_password
+mysql_pass=$(</home/bitnami/bitnami_application_password)
 sudo /opt/bitnami/mysql/bin/mysql -u root -p$mysql_pass -Bse "drop database bitnami_joomla;"
 unzip kickstart.zip -d /opt/bitnami/apps/joomla/htdocs
 mkdir /opt/bitnami/apps/joomla/htdocs/akeebatemp
